@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+advisor-reports/
+work/
+.solution-transplanter-backup/
