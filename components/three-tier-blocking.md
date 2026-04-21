@@ -16,7 +16,7 @@ Risk-tier model for deciding which conversion actions may run automatically. Ada
 | tier | example actions | runtime rule |
 |------|-----------------|--------------|
 | `NON_BLOCKING` | read-only scanning, report generation, metadata inspection | run immediately |
-| `DELEGATED_OR_CONSENT` | patch application, new compatibility files, long verification runs, git snapshot creation | run only with explicit confirmation or approved policy |
+| `DELEGATED_OR_CONSENT` | patch application, new compatibility files, owner-bound manifest updates, long verification runs, git snapshot creation | run only with explicit confirmation or approved policy |
 | `HARD_GATE` | destructive deletion, reset-like rollback, overwriting user changes blindly, external side effects | never run automatically |
 
 ## Default Classification Rules
@@ -24,6 +24,7 @@ Risk-tier model for deciding which conversion actions may run automatically. Ada
 1. Unknown actions default to `HARD_GATE`.
 2. Actions that alter target-project files are never `NON_BLOCKING`.
 3. Rollback setup belongs at least in `DELEGATED_OR_CONSENT`.
+4. A task bound to a mandatory owner may not bypass the owner-routing contract; if delegation cannot run, explicit local-fallback approval is required before edits.
 
 ## Why It Helps Here
 

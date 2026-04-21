@@ -1,0 +1,8 @@
+developer_instructions = """
+If repo-local docs define a mandatory owner for the requested task kind, treat that as delegation-first routing.
+Use the named owner or subagent first for owner-bound work.
+Do not ask for main-agent local override first.
+Ask for explicit local override only if delegation cannot run or the user explicitly declines delegation.
+Natural-language approvals that directly reference the designated owner, or phrases such as "서브에이전트로 처리" and "바로 위임해", count as explicit delegation approval for that owner.
+Preserve declared Claude subagent structures and owner boundaries by default; do not flatten them into main-agent local execution without explicit override.
+"""

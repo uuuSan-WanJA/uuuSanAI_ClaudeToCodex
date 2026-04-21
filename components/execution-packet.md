@@ -25,6 +25,8 @@ Compact handoff schema for delegated scan, transform, or verification work. Adap
 | field | type | purpose |
 |-------|------|---------|
 | `handoff_reason` | string | Why the work is being delegated now. |
+| `task_kind` | string | Stable task classification used by owner-routing rules. |
+| `designated_owner` | string | Owner chosen before delegation or local fallback. |
 | `context_hash` | string | Trace id for the parent workflow or report set. |
 | `required_reads` | array | Exact files the delegated unit may need to read. |
 | `user_intent_note` | string | Short note for nuance that does not fit the structured fields. |
@@ -34,6 +36,7 @@ Compact handoff schema for delegated scan, transform, or verification work. Adap
 1. Do not pass full conversation history when an execution packet is sufficient.
 2. Keep `recent_failures` short and concrete.
 3. Put raw file reading behind `required_reads` instead of copying file contents into the handoff.
+4. When the delegated work is owner-bound, include both `task_kind` and `designated_owner`.
 
 ## Why It Helps Here
 

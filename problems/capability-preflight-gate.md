@@ -22,4 +22,4 @@ What must be checked before we can truthfully say that a Claude Code target proj
 
 ## Current Direction
 
-Make preflight explicit and mandatory. No target project should be marked ready until unknowns and blockers are surfaced before the transformer edits files.
+Make preflight explicit and mandatory. No target project should be marked ready until unknowns, blockers, and any mandatory-owner routing gaps are surfaced before the transformer edits files.

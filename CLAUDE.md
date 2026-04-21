@@ -63,10 +63,12 @@ python scripts/stash_to_vault.py \
 If the current runtime cannot delegate a mandatory-owner task:
 
 1. stop before editing
-2. request delegation approval or explicit local override
-3. if a local override is approved, keep scope narrow and record it in `SESSION-HANDOFF.md` or a verification report
+2. request delegation approval first, with an explicit owner surface such as `/delegate solution-transplanter <task>` or `solution-transplanter로 진행`
+3. only if delegation remains unavailable or the user declines it, request explicit local override
+4. if a local override is approved, keep scope narrow and record it in `SESSION-HANDOFF.md` or a verification report
 
 Do not silently continue locally.
+Do not phrase the first fallback question as a main-agent local-override request when delegation approval has not been asked yet.
 
 ## Command Surface
 
@@ -75,8 +77,16 @@ Use explicit routing phrases instead of relying on inference:
 - `/delegate solution-transplanter <task>`
 - `/transplant-upgrade <solution-or-framework> <target-repo>`
 - `/route-check <task summary>`
+- natural-language equivalents such as `solution-transplanter로 진행`, `서브에이전트로 처리`, `바로 위임해` count as explicit delegation approval for the named owner
 
 If slash commands are unavailable, use the same phrases verbatim in the user request or handoff note.
+
+## Project-scoped Codex config
+
+- `.codex/config.toml` is a required Codex runtime layer for this repo.
+- It should use `developer_instructions`, not `model_instructions_file`, so built-in Codex instructions remain intact while delegation-first owner routing is reinforced.
+- Future Codex conversions should install the same project-scoped config layer when mandatory owners, preserved subagent structure, or guarded-write surfaces matter.
+- `RunCodex.bat` and `RunCodex_xhigh.bat` should front-load the same delegation-first rule in the startup prompt so the first turn already carries explicit owner approval language.
 
 ## Guarded Writes
 
@@ -89,4 +99,4 @@ Warn and stop before the main agent directly edits:
 
 Use this message shape:
 
-`This change is owned by solution-transplanter. Delegation or explicit local override is required.`
+`This change is owned by solution-transplanter. Delegation approval is required first; explicit local override is only the fallback.`

@@ -24,6 +24,13 @@ applications:
     applied_at: "2026-04-21"
     applied_by: <self>
     notes: "Scanner output contract adopted as a core artifact."
+  - id: session-handoff-note
+    kind: component
+    source_path: components/session-handoff-note.md
+    pinned_version: "latest"
+    applied_at: "2026-04-21"
+    applied_by: <self>
+    notes: "Adopted as the continuity artifact spec for Claude/Codex session switching."
   - id: patch-plan
     kind: component
     source_path: components/patch-plan.md
@@ -38,6 +45,13 @@ applications:
     applied_at: "2026-04-21"
     applied_by: <self>
     notes: "Verifier output contract adopted as a core artifact."
+  - id: owner-routing-contract
+    kind: component
+    source_path: components/owner-routing-contract.md
+    pinned_version: "latest"
+    applied_at: "2026-04-21"
+    applied_by: <self>
+    notes: "Binding owner-routing contract adopted to separate descriptive roles from mandatory task owners."
   - id: execution-packet
     kind: component
     source_path: components/execution-packet.md
@@ -73,6 +87,13 @@ applications:
     applied_at: "2026-04-21"
     applied_by: <self>
     notes: "Transplanted from HarnessMaker and adopted as the scale-up framework for large scan and verification work."
+  - id: multi-project-rollout
+    kind: framework
+    source_path: frameworks/multi-project-rollout
+    pinned_version: "latest"
+    applied_at: "2026-04-21"
+    applied_by: <self>
+    notes: "Adopted as the batch execution framework for applying the same conversion standard across many target repositories."
 ---
 
 # Applied Solutions

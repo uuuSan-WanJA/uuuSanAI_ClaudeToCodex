@@ -23,3 +23,4 @@ Which conversion actions can run immediately, which require user confirmation, a
 ## Current Direction
 
 Use a stable risk-tier model so the transformer can move fast on safe actions without silently crossing into unsafe project modifications.
+When a task is bound to a mandatory owner, authorization also requires the routing contract to be satisfied or an explicit local override to be approved.

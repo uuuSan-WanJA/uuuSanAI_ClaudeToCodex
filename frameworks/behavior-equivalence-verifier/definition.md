@@ -20,11 +20,13 @@ The default scale-up mechanism for such cases is `frameworks/dynamic-orchestrati
 - Claude-side path still valid
 - Codex-side path now valid
 - representative project workflow passes
+- switchback workflows pass when the project is meant to alternate between runtimes
 
 ## Output
 
 - verification report
 - compatibility verdict by workflow
+- continuity verdict for resume paths when applicable
 
 ## Rules
 
@@ -32,3 +34,4 @@ The default scale-up mechanism for such cases is `frameworks/dynamic-orchestrati
 - treat unknowns as failures to prove compatibility
 - keep evidence attached to each verdict
 - keep delegated verification results fact-first and mergeable
+- when continuity is in scope, check both Claude-to-Codex and Codex-to-Claude resume paths explicitly

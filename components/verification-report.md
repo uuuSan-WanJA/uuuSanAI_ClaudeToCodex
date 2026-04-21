@@ -34,6 +34,18 @@ Specification for the evidence artifact produced after conversion work.
 - what still needs emulation
 - blockers
 
+### Session Switchback
+
+- Claude-to-Codex resume result when applicable
+- Codex-to-Claude resume result when applicable
+- remaining continuity gaps
+
+### Owner Routing Exceptions
+
+- mandatory-owner tasks completed by delegation or local fallback
+- approval or override evidence when local fallback was used
+- remaining owner-contract gaps
+
 ## Verdict Values
 
 - pass
@@ -45,3 +57,5 @@ Specification for the evidence artifact produced after conversion work.
 - verification must refer to workflows, not only files
 - unknowns must stay visible
 - a project is not fully compatible while critical workflows remain unverified
+- file presence alone is not enough to claim session-switch continuity
+- if a mandatory-owner task ran through local fallback, the report must say so explicitly

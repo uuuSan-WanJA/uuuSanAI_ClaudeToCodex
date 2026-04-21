@@ -30,3 +30,7 @@ Specification for `compatibility-matrix.md`, the repo-level artifact that compar
 - Status must stay conservative.
 - `verified` means tested, not merely designed.
 - The matrix should be specific enough to drive a patch plan.
+- When session switching is in scope, include explicit axes for root-guide parity, launcher parity, handoff continuity, and switchback verification.
+- When a project defines agent roles or named maintainers, include explicit axes for subagent architecture preservation, runtime contract installation gate, owner routing contract, routing preflight, delegation fallback, guarded write surfaces, and any task-routing command surface.
+- When a project depends on mandatory owners or preserved subagent structure, include an explicit project-scoped Codex config axis for `.codex/config.toml` or an equivalent local `developer_instructions` layer.
+- When commands, hooks, wrapper scripts, or launcher flows are part of normal operation, include an explicit workflow-parity axis rather than treating those surfaces as optional cleanup.
